@@ -1,8 +1,11 @@
 {
   "name": "braingamesau",
-  "version": "1.1.0",
-  "description": "",
-  "main": "babel.config.js",
+  "version": "1.1.1",
+  "description": "brain-games",
+  "keywords": [
+    "brain-games",
+    "hexlet"
+  ],
   "dependencies": {
     "readline-sync": "^1.4.9"
   },
@@ -28,7 +31,7 @@
     "type": "git",
     "url": "git+https://github.com/augrinn/project-lvl1-s442.git"
   },
-  "author": "",
+  "author": "Sergei Serov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/augrinn/project-lvl1-s442/issues"
