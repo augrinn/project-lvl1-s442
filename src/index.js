@@ -1,9 +1,10 @@
 import readlineSync from 'readline-sync';
 import chalk from 'chalk';
 
-export const printSeparator = (separator='') => {
+export const printSeparator = (separator = '') => {
   console.log(separator);
-}
+};
+
 export const greeting = () => {
   console.log('Welcome to the Brain Games!');
 };

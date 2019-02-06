@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import { greeting, askName, sayHello, printSeparator } from '..';
+import {
+  greeting, askName, sayHello, printSeparator,
+} from '..';
 
 greeting();
 printSeparator();
