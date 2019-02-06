@@ -1,9 +1,4 @@
 #!/usr/bin/env node
-import {
-  greeting, askName, sayHello, printSeparator,
-} from '..';
+import { greeting } from '..';
 
 greeting();
-printSeparator();
-const name = askName();
-sayHello(name);
