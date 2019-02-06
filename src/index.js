@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
 export const greeting = () => {
   console.log();
@@ -8,25 +9,20 @@ export const greeting = () => {
   console.log(`Hello, ${name}`);
 };
 
-const isEven = number => number % 2 === 0;
-
-const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min)) + min;
+const countRound = 3;
 
 const askQuestion = (question) => {
   console.log(`Question: ${question}`);
   return readlineSync.question('Your answer: ');
 };
 
-const getCountRound = () => 3;
-
-const getMinNumber = () => 0;
-
-const getMaxNumber = () => 50;
-
-export const startGame = () => {
+export const startGame = (game) => {
+  const rules = car(game);
+  const getQuestion = car(cdr(game));
+  const getCorrectAnswer = cdr(cdr(game));
   console.log();
   console.log('Welcome to the Brain Games!');
-  console.log('Answer "yes" if number even otherwise answer "no".');
+  console.log(rules);
   console.log();
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
@@ -35,17 +31,18 @@ export const startGame = () => {
     if (numberRound === 0) {
       return true;
     }
-    const question = getRandomInt(getMinNumber(), getMaxNumber());
-    const correctAnswer = isEven(question) ? 'yes' : 'no';
+    const question = getQuestion();
+    const correctAnswer = getCorrectAnswer(question);
     const answer = askQuestion(question);
     if (answer.toLowerCase() !== correctAnswer) {
-      console.log(`$answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
       return false;
     }
     console.log('Correct!');
     return check(numberRound - 1);
   };
-  if (check(getCountRound())) {
+  const isWin = check(countRound);
+  if (isWin) {
     console.log(`Congratulations, ${name}!`);
   } else {
     console.log(`Let's try again, ${name}!`);
