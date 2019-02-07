@@ -1,12 +1,13 @@
 {
   "name": "braingamesau",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "brain-games",
   "keywords": [
     "brain-games",
     "brain-even",
     "brain-calc",
     "brain-gcd",
+    "brain-progression",
     "hexlet"
   ],
   "dependencies": {
@@ -34,7 +35,8 @@
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
-    "brain-gcd": "dist/bin/brain-gcd.js"
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-progression": "dist/bin/brain-progression.js"
   },
   "files": [
     "dist"
