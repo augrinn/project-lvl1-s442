@@ -14,7 +14,7 @@ export default () => {
     const first = parseInt(questionArr[0], 10);
     const second = parseInt(questionArr[1], 10);
     const gcd = (divided, divider) => {
-      const result = divided % divider; 
+      const result = divided % divider;
       if (result === 0) {
         return divider;
       }
