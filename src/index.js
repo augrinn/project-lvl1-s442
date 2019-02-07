@@ -17,12 +17,11 @@ const askQuestion = (question) => {
 };
 
 export const startGame = (game) => {
-  const rules = car(game);
-  const getQuestion = car(cdr(game));
-  const getCorrectAnswer = cdr(cdr(game));
+  const description = car(game);
+  const getDataQuestion = cdr(game);
   console.log();
   console.log('Welcome to the Brain Games!');
-  console.log(rules);
+  console.log(description);
   console.log();
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
@@ -31,8 +30,9 @@ export const startGame = (game) => {
     if (numberRound === 0) {
       return true;
     }
-    const question = getQuestion();
-    const correctAnswer = getCorrectAnswer(question);
+    const dataQuestion = getDataQuestion();
+    const question = car(dataQuestion);
+    const correctAnswer = cdr(dataQuestion);
     const answer = askQuestion(question);
     if (answer.toLowerCase() !== correctAnswer) {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);

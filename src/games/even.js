@@ -9,9 +9,11 @@ const isEven = number => number % 2 === 0;
 const getRandomInt = () => Math.floor(Math.random() * (maxNumber - minNumber)) + minNumber;
 
 export default () => {
-  const rules = 'Answer "yes" if number even otherwise answer "no".';
-  const getQuestion = () => getRandomInt();
-  const getCorrectAnswer = question => (isEven(question) ? 'yes' : 'no');
-
-  return cons(rules, cons(getQuestion, getCorrectAnswer));
+  const description = 'Answer "yes" if number even otherwise answer "no".';
+  const getDataQuestion = () => {
+    const question = getRandomInt();
+    const correctAnswer = (isEven(question) ? 'yes' : 'no');
+    return cons(question, correctAnswer);
+  };
+  return cons(description, getDataQuestion);
 };

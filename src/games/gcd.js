@@ -6,22 +6,22 @@ const maxNumber = 101;
 
 const getRandomInt = () => Math.floor(Math.random() * (maxNumber - minNumber)) + minNumber;
 
+const gcd = (divided, divider) => {
+  const result = divided % divider;
+  if (result === 0) {
+    return divider;
+  }
+  return gcd(divider, result);
+};
+
 export default () => {
-  const rules = 'Find the greatest common divisor of given numbers.';
-  const getQuestion = () => `${getRandomInt(minNumber, maxNumber)} ${getRandomInt(minNumber, maxNumber)}`;
-  const getCorrectAnswer = (question) => {
-    const questionArr = question.split(' ');
-    const first = parseInt(questionArr[0], 10);
-    const second = parseInt(questionArr[1], 10);
-    const gcd = (divided, divider) => {
-      const result = divided % divider;
-      if (result === 0) {
-        return divider;
-      }
-      return gcd(divider, result);
-    };
-    const result = first > second ? gcd(first, second) : gcd(second, first);
-    return String(result);
+  const description = 'Find the greatest common divisor of given numbers.';
+  const getDataQuestion = () => {
+    const first = getRandomInt(minNumber, maxNumber);
+    const second = getRandomInt(minNumber, maxNumber);
+    const question = `${first} ${second}`;
+    const correctAnswer = String(first > second ? gcd(first, second) : gcd(second, first));
+    return cons(question, correctAnswer);
   };
-  return cons(rules, cons(getQuestion, getCorrectAnswer));
+  return cons(description, getDataQuestion);
 };

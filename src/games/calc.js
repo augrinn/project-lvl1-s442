@@ -17,21 +17,25 @@ const getRandomOperation = () => {
   }
 };
 
+const getCorrectAnswer = (first, second, sign) => {
+  if (sign === '+') {
+    return String(first + second);
+  }
+  if (sign === '-') {
+    return String(first - second);
+  }
+  return String(first * second);
+};
+
 export default () => {
-  const rules = 'What is the result of the expression?';
-  const getQuestion = () => `${getRandomInt(minNumber, maxNumber)} ${getRandomOperation()} ${getRandomInt(minNumber, maxNumber)}`;
-  const getCorrectAnswer = (question) => {
-    const questionArr = question.split(' ');
-    const first = parseInt(questionArr[0], 10);
-    const second = parseInt(questionArr[2], 10);
-    const sign = questionArr[1];
-    if (sign === '+') {
-      return String(first + second);
-    }
-    if (sign === '-') {
-      return String(first - second);
-    }
-    return String(first * second);
+  const description = 'What is the result of the expression?';
+  const getDataQuestion = () => {
+    const first = getRandomInt(minNumber, maxNumber);
+    const second = getRandomInt(minNumber, maxNumber);
+    const sign = getRandomOperation();
+    const question = `${first} ${sign} ${second}`;
+    const correctAnswer = getCorrectAnswer(first, second, sign);
+    return cons(question, correctAnswer);
   };
-  return cons(rules, cons(getQuestion, getCorrectAnswer));
+  return cons(description, getDataQuestion);
 };
