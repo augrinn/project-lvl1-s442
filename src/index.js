@@ -16,9 +16,7 @@ const askQuestion = (question) => {
   return readlineSync.question('Your answer: ');
 };
 
-export const startGame = (game) => {
-  const description = car(game);
-  const getDataQuestion = cdr(game);
+export const startGame = (description, getDataQuestion) => {
   console.log();
   console.log('Welcome to the Brain Games!');
   console.log(description);

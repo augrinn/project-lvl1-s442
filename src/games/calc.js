@@ -1,3 +1,4 @@
+import { startGame } from '..';
 import { cons } from 'hexlet-pairs';
 
 const minNumber = 0;
@@ -37,5 +38,5 @@ export default () => {
     const correctAnswer = getCorrectAnswer(first, second, sign);
     return cons(question, correctAnswer);
   };
-  return cons(description, getDataQuestion);
+  startGame(description, getDataQuestion);
 };

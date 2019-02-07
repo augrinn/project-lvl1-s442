@@ -1,3 +1,4 @@
+import { startGame } from '..';
 import { cons } from 'hexlet-pairs';
 
 const minNumber = 0;
@@ -15,5 +16,5 @@ export default () => {
     const correctAnswer = (isEven(question) ? 'yes' : 'no');
     return cons(question, correctAnswer);
   };
-  return cons(description, getDataQuestion);
+  startGame(description, getDataQuestion);
 };

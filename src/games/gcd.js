@@ -1,3 +1,4 @@
+import { startGame } from '..';
 import { cons } from 'hexlet-pairs';
 
 const minNumber = 2;
@@ -23,5 +24,5 @@ export default () => {
     const correctAnswer = String(first > second ? gcd(first, second) : gcd(second, first));
     return cons(question, correctAnswer);
   };
-  return cons(description, getDataQuestion);
+  startGame(description, getDataQuestion);
 };
