@@ -1,11 +1,12 @@
 import { startGame } from '..';
 import { cons } from 'hexlet-pairs';
+import getRandomInt from '../utils';
+
+const description = 'What is the result of the expression?';
 
 const minNumber = 0;
 
 const maxNumber = 50;
-
-const getRandomInt = (max, min) => Math.floor(Math.random() * (max - min)) + min;
 
 const getRandomOperation = () => {
   switch (getRandomInt(1, 4)) {
@@ -28,15 +29,13 @@ const getCorrectAnswer = (first, second, sign) => {
   return String(first * second);
 };
 
-export default () => {
-  const description = 'What is the result of the expression?';
-  const getDataQuestion = () => {
-    const first = getRandomInt(minNumber, maxNumber);
-    const second = getRandomInt(minNumber, maxNumber);
-    const sign = getRandomOperation();
-    const question = `${first} ${sign} ${second}`;
-    const correctAnswer = getCorrectAnswer(first, second, sign);
-    return cons(question, correctAnswer);
-  };
-  startGame(description, getDataQuestion);
+const getDataQuestion = () => {
+  const first = getRandomInt(minNumber, maxNumber);
+  const second = getRandomInt(minNumber, maxNumber);
+  const sign = getRandomOperation();
+  const question = `${first} ${sign} ${second}`;
+  const correctAnswer = getCorrectAnswer(first, second, sign);
+  return cons(question, correctAnswer);
 };
+
+export default () => startGame(description, getDataQuestion);

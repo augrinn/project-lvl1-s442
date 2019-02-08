@@ -16,6 +16,22 @@ const askQuestion = (question) => {
   return readlineSync.question('Your answer: ');
 };
 
+const check = (numberRound, getDataQuestion) => {
+  if (numberRound === 0) {
+    return true;
+  }
+  const dataQuestion = getDataQuestion();
+  const question = car(dataQuestion);
+  const correctAnswer = cdr(dataQuestion);
+  const answer = askQuestion(question);
+  if (answer.toLowerCase() !== correctAnswer) {
+    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+    return false;
+  }
+  console.log('Correct!');
+  return check(numberRound - 1);
+};
+
 export const startGame = (description, getDataQuestion) => {
   console.log();
   console.log('Welcome to the Brain Games!');
@@ -24,22 +40,7 @@ export const startGame = (description, getDataQuestion) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}`);
   console.log();
-  const check = (numberRound) => {
-    if (numberRound === 0) {
-      return true;
-    }
-    const dataQuestion = getDataQuestion();
-    const question = car(dataQuestion);
-    const correctAnswer = cdr(dataQuestion);
-    const answer = askQuestion(question);
-    if (answer.toLowerCase() !== correctAnswer) {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-      return false;
-    }
-    console.log('Correct!');
-    return check(numberRound - 1);
-  };
-  const isWin = check(countRound);
+  const isWin = check(countRound, getDataQuestion);
   if (isWin) {
     console.log(`Congratulations, ${name}!`);
   } else {
