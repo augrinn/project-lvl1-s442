@@ -29,7 +29,7 @@ const check = (numberRound, getDataQuestion) => {
     return false;
   }
   console.log('Correct!');
-  return check(numberRound - 1);
+  return check(numberRound - 1, getDataQuestion);
 };
 
 export const startGame = (description, getDataQuestion) => {
