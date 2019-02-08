@@ -8,7 +8,7 @@ const minNumber = 1;
 
 const maxNumber = 500;
 
-const isPrine = (number) => {
+const isPrime = (number) => {
   if (number < 2) {
     return false;
   }
@@ -27,7 +27,7 @@ const isPrine = (number) => {
 const getDataQuestion = () => {
   const number = getRandomInt(minNumber, maxNumber);
   const question = `${number}`;
-  const correctAnswer = isPrine(number) ? 'yes' : 'no';
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
   return cons(question, correctAnswer);
 };
 
