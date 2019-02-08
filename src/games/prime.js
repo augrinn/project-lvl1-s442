@@ -9,10 +9,10 @@ const minNumber = 1;
 const maxNumber = 500;
 
 const isPrine = (number) => {
+  if (number < 2) {
+    return false;
+  }
   const iter = (divider) => {
-    if (number < 2) {
-      return false;
-    }
     if (number % divider === 0) {
       return false;
     }
