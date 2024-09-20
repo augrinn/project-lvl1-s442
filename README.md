@@ -1,6 +1,1 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/786d5f79ca3b839f8b8a/maintainability)](https://codeclimate.com/github/augrinn/project-lvl1-s442/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/786d5f79ca3b839f8b8a/test_coverage)](https://codeclimate.com/github/augrinn/project-lvl1-s442/test_coverage) [![Build Status](https://travis-ci.org/augrinn/project-lvl1-s442.svg?branch=master)](https://travis-ci.org/augrinn/project-lvl1-s442)
-[![asciicast](https://asciinema.org/a/gbsUBpsICkrT2b3BJSIarrPz3.svg)](https://asciinema.org/a/gbsUBpsICkrT2b3BJSIarrPz3)
-[![asciicast](https://asciinema.org/a/irD3Tw5ugvmQoqB9DuMFE4BW3.svg)](https://asciinema.org/a/irD3Tw5ugvmQoqB9DuMFE4BW3)
-[![asciicast](https://asciinema.org/a/JiqPYjnFoyLKVKVdo9nEEpCEe.svg)](https://asciinema.org/a/JiqPYjnFoyLKVKVdo9nEEpCEe)
-[![asciicast](https://asciinema.org/a/qM2gQnuvYa0Sj9n1rdKkpPORk.svg)](https://asciinema.org/a/qM2gQnuvYa0Sj9n1rdKkpPORk)
-[![asciicast](https://asciinema.org/a/jW0oxlxci5f7JCCOPghRUik0H.svg)](https://asciinema.org/a/jW0oxlxci5f7JCCOPghRUik0H)
